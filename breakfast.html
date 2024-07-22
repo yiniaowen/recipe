@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokkie Dokie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1px 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .header-content .logo {
+            text-decoration: none;
+            margin-bottom: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        .header-content .additional-image {
+            text-decoration: none;
+            margin-top: 20px;
+            width: 10%; 
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .search-bar {
+            margin-top: 10px;
+            position: absolute;
+            right: 150px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 13px;
+            margin-left: 5px;
+            background-color: rgb(125, 15, 15);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #222222;
+        }
+
+        .red-line {
+            border: none;
+            border-top: 9px solid rgb(97, 20, 20);
+        }
+
+        .line {
+            border: none;
+            border-top: 1px solid rgb(97, 20, 20);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: left; 
+            margin-left: 30px;
+        }
+
+        .button-group .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button-group .dropdown button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 25px;
+            background-color: #ffffff;
+            text-decoration: none;
+            color: rgb(97, 20, 20);
+            text-align: center;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .button-group .dropdown button:hover {
+            background-color: rgb(219, 211, 211);
+        }
+
+        .button-group .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(97, 20, 20);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .button-group .dropdown-content a {
+            color: rgb(249, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .button-group .dropdown-content a:hover {
+            background-color: #1d1d1d;
+        }
+        
+        /*for recipes*/
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(590px, 30fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 19px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .product-card img {
+            width: 350px;
+            height: 330px;
+            margin-left: 50px; /* Space between image and text */
+            border-radius: 9px;
+        }
+
+        .product-card h3 {
+
+            align-items: center;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 10px;
+            text-align: center;
+            color: rgb(97, 20, 20);
+        }
+
+        .product-card p {
+            background-color: rgb(255, 255, 255);
+            font-size: 17px;
+            padding: 1px;
+            text-align: center; /* Align text to the left */
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            color: rgb(97, 20, 20);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        /*to remove underline on links*/
+        a {
+            text-decoration: none;
+        }
+        /*for adding footer*/
+        footer {
+            background-color: rgb(97, 20, 20);
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+            position: bottom;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="bunny.jpeg" alt="Another Image" class="additional-image">
+            </a>
+            <a href="index.html">
+                <img src="recipe.webp" alt="Tokkie Dokie" class="logo">
+            </a>
+        </div>
+    </header>
+    <hr class="red-line">
+
+    <div class="button-group">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('home-dropdown')">HOME</button>
+            <div id="home-dropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('sweet-treats-dropdown')">SWEET TREATS</button>
+            <div id="sweet-treats-dropdown" class="dropdown-content">
+                <a href="matcha.html">Matcha Cake</a>
+                <a href="cookie.html">Coco Cookies</a>
+                <a href="crackers.html">Berry Crackers</a>
+                <a href="product.html">Cup-Cake</a>
+                <a href="pie.html">Strawberry Pie</a>
+                <a href="pretzel.html">Pretzel Donut</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dinner-menu-dropdown')">DINNER MENU</button>
+            <div id="dinner-menu-dropdown" class="dropdown-content">
+                <a href="pasta.html">Pasta</a>
+                <a href="steak.html">Steak</a>
+                <a href="omurice.html">Omu-Rice</a>
+                <a href="hamburger.html">Hamburger Steak</a>
+                <a href="ramen.html">Classic Ramen</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('crunchy-bites-dropdown')">CRUNCHY BITES</button>
+            <div id="crunchy-bites-dropdown" class="dropdown-content">
+                <a href="chips.html">Burger</a>
+                <a href="nuggets.html">Nuggets</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="fries.html">Crunchy Fries</a>
+                <a href="chicken.html">Purinkle Chicken</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('all-recipe-dropdown')">ALL RECIPE</button>
+            <div id="all-recipe-dropdown" class="dropdown-content">
+                <a href="breakfast.html">All Recipies</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form action="search_results.html" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr class="red-line">
+    <br>
+    <br>
+    <div class="product-container">
+        <div class="product-card">
+            <a href="chicken.html">
+                <img src="Korean fried chicken.jpeg" alt="Easy Fried Chicken" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>EASY FRIED CHICKEN RECIPE</h3>
+                <p>Prepare your taste buds for a culinary adventure with our Fried Chicken—a dish that marries traditional comfort with an exciting burst of flavor. Each juicy, tender piece of chicken is enveloped in a golden, crispy coating that’s been seasoned to perfection with a secret blend of herbs and spices. The coating boasts a subtle hint of purinkle, a unique and vibrant seasoning that adds a hint of exotic sweetness and a pop of color to every bite.</p>
+            </div>
+        </div>
+
+       
+
+        <div class="product-card">
+            <a href="pasta.html">
+                <img src="seafood pasta.jpeg" alt="Strawberry Pie" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>SHRIMP ALFREDO PASTA RECIPE</h3>
+                <p>Experience a luxurious meal with our Shrimp Alfredo Pasta, where creamy, velvety Alfredo sauce meets succulent, perfectly cooked shrimp. This dish combines the rich, buttery flavors of classic Alfredo sauce with the delicate sweetness of plump shrimp, creating a truly indulgent dining experience. </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="product.html">
+                <img src="_3.jpeg" alt="Strawberry Pie" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CUPCAKE RECIPE</h3>
+                <p>Indulge in the ultimate chocolate experience with our decadent Choco Cupcakes. Each cupcake is a rich, moist, and intensely chocolaty masterpiece, crafted to satisfy even the most discerning chocolate lovers. Made with the finest cocoa powder and high-quality chocolate, every bite delivers a burst of deep, luxurious chocolate flavor that melts in your mouth. </p>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <a href="cookie.html">
+                <img src="pinkk.jpeg" alt="Cocoa Cookie" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>COCOA COOKIE RECIPE</h3>
+                <p>Indulge in the perfect fusion of flavors with our Strawberry Cocoa Cookies topped with White Chocolate Chips. These cookies are a delightful treat that combines the rich, velvety taste of cocoa with the sweet and slightly tangy flavor of fresh strawberries, creating a mouthwatering harmony that will leave you craving more.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="hamburger.html">
+                <img src="Hamburg Cheese Curry Rice.jpeg" alt="Hamburger Steak" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>HAMBURGER STEAK RECIPE</h3>
+                <p>Discover the savory delight of Japanese Hamburger Steak, a beloved classic that brings comfort and elegance to your plate. This dish features juicy, perfectly seasoned beef patties that are tender and flavorful, combining the rich taste of high-quality ground beef with a blend of aromatic spices and seasonings.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="chips.html">
+                <img src="download (1).jpeg" alt="Juicy Chicken Burger" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>JUICY CHICKEN BURGER RECIPE</h3>
+                <p>Savor the succulent goodness of our Chicken Burger, a mouthwatering delight that combines a perfectly seasoned, juicy chicken patty with a medley of fresh, flavorful toppings. Each bite starts with a tender, grilled chicken breast, marinated in a blend of aromatic spices and herbs that create a savory, irresistible flavor. The patty is grilled to perfection, ensuring a crispy, golden exterior while maintaining a moist and flavorful interior.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="matcha.html">
+                <img src="matcha.jpeg" alt="Matcha Cake" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>MATCHA CAKE RECIPE</h3>
+                <p>Experience the delicate harmony of flavors with our exquisite Matcha Cake. This enchanting dessert combines the earthy essence of high-quality matcha green tea with the light, fluffy texture of a classic sponge cake. Each bite is a delightful journey, starting with the subtle bitterness of matcha, perfectly balanced by the sweetness of the cake and the creamy, rich frosting.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="nuggets.html">
+                <img src="save + follow _𖥔 ݁ ˖.jpeg" alt="Cheesy Potato Nuggets" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CHEESY POTATO NUGGETS RECIPE</h3>
+                <p>Discover the ultimate comfort food with our irresistibly delicious Potato Nuggets. These bite-sized delights are a perfect blend of creamy mashed potatoes, savory seasonings, and a crispy, golden exterior that delivers a satisfying crunch with every bite.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="omurice.html">
+                <img src="egg_omu.jpg" alt="Omu-Rice" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>OMU-RICE RECIPE</h3>
+                <p>Experience a comforting classic with our Chinese Egg Tomato Rice, a simple yet profoundly satisfying dish that combines the sweet tang of ripe tomatoes with the savory richness of scrambled eggs, all served over a bed of fluffy rice.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="pizza.html">
+                <img src="korean style pizza.jpeg" alt="Pizza" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CHEESY PIZZA RECIPE</h3>
+                <p>Savor the classic comfort of our Cheesy Pizza, a deliciously cheesy and flavorful dish that brings together a crispy, golden crust with a rich, savory tomato sauce and a generous layer of gooey mozzarella cheese. Perfectly baked to create a delightful balance of textures, this pizza is sure to become a family favorite.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="pretzel.html">
+                <img src="donut.jpeg" alt="Pretzel Donut" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>PRETZEL DONUT RECIPE</h3>
+                <p>Indulge in the ultimate sweet and salty treat with our Pretzel Donut. This innovative creation combines the classic taste of a soft, chewy pretzel with the decadent sweetness of a donut, resulting in a unique and irresistible dessert experience.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="pie.html">
+                <img src="♥︎.jpeg" alt="Strawberry Pie" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>STRAWBERRY PIE RECIPE</h3>
+                <p>Delight in the refreshing and sweet flavor of our Strawberry Pie, a perfect summer dessert that features a flaky, buttery crust filled with a luscious, fresh strawberry filling. Each bite offers a burst of juicy strawberries, balanced with a touch of sweetness and a hint of vanilla, making it an ideal treat for any occasion.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="crackers.html">
+                <img src="crackers.jpg" alt="Berry Cracker" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>BERRY CRACKER RECIPE</h3>
+                <p>Indulge in the delightful combination of creamy, sweet, and tangy flavors with our Berry Cream Crackers. This exquisite treat features a perfect balance of crispy, buttery crackers, rich cream cheese, and a medley of fresh, juicy berries. Each bite is a harmonious blend of textures and tastes, making it an irresistible snack or dessert for any occasion.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="fries.html">
+                <img src="fries.jpg" alt="Crinkle Fries" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CRINKLE FRIES RECIPE</h3>
+                <p>Dive into a world of crispy, golden perfection with our irresistible Crinkle Fries. Each fry is expertly cut to create those signature ridges that offer the perfect balance of crunch and fluffiness in every bite.</p>
+            </div>
+        </div>
+    
+        <div class="product-card">
+            <a href="ramen.html">
+                <img src="Ramen.jpeg" alt="Crinkle Fries" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CLASSRIC CHICKEN RAMEN RECIPE</h3>
+                <p>Dive into the heartwarming bowl of Classic Chicken Ramen, where rich flavors and comforting textures come together to create a truly satisfying experience. This traditional Japanese dish features a savory, aromatic broth that simmers with tender chicken, fresh vegetables, and a medley of spices, creating a harmonious symphony of taste in every spoonful.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="recipe3.html">
+                <img src="salad.jpeg" alt="Crinkle Fries" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CEASER SALAD RECIPE</h3>
+                <p>Experience the perfect blend of crisp and creamy with our Caesar Salad—a timeless classic that never goes out of style. This salad starts with a bed of fresh, crisp romaine lettuce, known for its crunchy texture and vibrant flavor. Each leaf is generously tossed with a rich and tangy Caesar dressing, made from scratch with a delightful mix of garlic, anchovies, Dijon mustard, and the unmistakable tang of freshly squeezed lemon juice.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="salad.html">
+                <img src="𝐊 𝐭 𝐭 𝐧 𝐚.jpeg" alt="Crinkle Fries" class="product-image">
+            </a>
+            <div class="product-details">
+                <h3>CHOCOLATE MOUSSE CAKE RECIPE</h3>
+                <p>Experience pure indulgence with our Chocolate Mousse Cake, a dessert that epitomizes luxury and decadence. This cake features a rich, velvety chocolate mousse encased in a delicate, chocolate sponge base. Each bite reveals a sumptuous blend of creamy, bittersweet chocolate that melts effortlessly on your tongue, delivering a deep, satisfying flavor that chocolate lovers crave.</p>
+            </div>
+        </div>
+    
+
+    
+</div>
+
+    <footer>
+        <hr class="red-line">
+        <p>Copyright © 2024 Tokkie Dokie. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

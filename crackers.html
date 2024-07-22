@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokkie Dokie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1px 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .header-content .logo {
+            text-decoration: none;
+            margin-bottom: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        .header-content .additional-image {
+            text-decoration: none;
+            margin-top: 20px;
+            width: 10%; 
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .search-bar {
+            margin-top: 10px;
+            position: absolute;
+            right: 150px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 13px;
+            margin-left: 5px;
+            background-color: rgb(125, 15, 15);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #222222;
+        }
+
+        .red-line {
+            border: none;
+            border-top: 9px solid rgb(97, 20, 20);
+        }
+
+        .line {
+            border: none;
+            border-top: 1px solid rgb(97, 20, 20);
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: left; 
+            margin-left: 30px;
+        }
+
+        .button-group .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button-group .dropdown button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 25px;
+            background-color: #ffffff;
+            text-decoration: none;
+            color: rgb(97, 20, 20);
+            text-align: center;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .button-group .dropdown button:hover {
+            background-color: rgb(219, 211, 211);
+        }
+
+        .button-group .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(97, 20, 20);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .button-group .dropdown-content a {
+            color: rgb(249, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .button-group .dropdown-content a:hover {
+            background-color: #1d1d1d;
+        }
+
+
+/*for recipe*/
+.container {
+    display: inline-flexbox;
+    align-items: center;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: justify;
+    color: rgb(97, 20, 20);
+}
+
+/*name of recipe*/
+.desp {
+    display: absolute;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    text-align: center;
+    color: rgb(97, 20, 20);
+}
+/*to align image and description of image*/
+.container-card {
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding: 1px;
+    text-align: left; /* Align text to the left */
+    display: inline-flex;
+    align-items: center;
+    margin-right: 90px;
+
+}
+/*for image*/
+.container img {
+    width: 450px;
+    height: 330px;
+    margin-left: 130px; /* Space between image and text */
+    margin-right: 70px;
+}
+
+.about-container {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+
+        }
+        .about-container h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+            color: rgb(97, 20, 20);
+        }
+          /*name of recipe*/
+        .about-container h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: rgb(97, 20, 20);
+        }
+         /*description about the recipe*/
+        .about-container p {
+            line-height: 1.6; 
+            color: rgb(97, 20, 20);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+          }
+
+        li {
+            margin-bottom: 10px;
+          }
+/*for decorating li*/
+          section {
+           color: rgb(97, 20, 20);
+           font-size: 17px;
+}
+
+.imageee {
+    display: block;
+    width: 350px; /* Set the width to a smaller size */
+    height: auto;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+
+}
+  
+        footer {
+            background-color: rgb(97, 20, 20);
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+            position: bottom;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="bunny.jpeg" alt="Another Image" class="additional-image">
+            </a>
+            <a href="index.html">
+                <img src="recipe.webp" alt="Tokkie Dokie" class="logo">
+            </a>
+        </div>
+    </header>
+    <hr class="red-line">
+
+    <div class="button-group">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('home-dropdown')">HOME</button>
+            <div id="home-dropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('sweet-treats-dropdown')">SWEET TREATS</button>
+            <div id="sweet-treats-dropdown" class="dropdown-content">
+                <a href="matcha.html">Matcha Cake</a>
+                <a href="cookie.html">Coco Cookies</a>
+                <a href="crackers.html">Berry Crackers</a>
+                <a href="product.html">Cup-Cake</a>
+                <a href="pie.html">Strawberry Pie</a>
+                <a href="pretzel.html">Pretzel Donut</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dinner-menu-dropdown')">DINNER MENU</button>
+            <div id="dinner-menu-dropdown" class="dropdown-content">
+                <a href="pasta.html">Pasta</a>
+                <a href="steak.html">Steak</a>
+                <a href="omurice.html">Omu-Rice</a>
+                <a href="hamburger.html">Hamburger Steak</a>
+                <a href="ramen.html">Classic Ramen</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('crunchy-bites-dropdown')">CRUNCHY BITES</button>
+            <div id="crunchy-bites-dropdown" class="dropdown-content">
+                <a href="chips.html">Burger</a>
+                <a href="nuggets.html">Nuggets</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="fries.html">Crunchy Fries</a>
+                <a href="chicken.html">Purinkle Chicken</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('all-recipe-dropdown')">ALL RECIPE</button>
+            <div id="all-recipe-dropdown" class="dropdown-content">
+                <a href="breakfast.html">All Recipies</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form action="search_results.html" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr class="red-line">
+    <div class="desp">
+        <h1>BERRY CRACKER RECIPE</h1>
+</div>
+    <div class="container">
+        <div class="container-card">
+            <img src="4 Easy Appetizers with RITZ Crackers.jpeg" alt="Tokkie Dokie">
+            <p><i>Indulge in the delightful combination of creamy, sweet, and tangy flavors with our Berry Cream Crackers. This exquisite treat features a perfect balance of crispy, buttery crackers, rich cream cheese, and a medley of fresh, juicy berries. Each bite is a harmonious blend of textures and tastes, making it an irresistible snack or dessert for any occasion.
+            <br><br>Our Berry Cream Crackers are not only a feast for the taste buds but also a visual delight. The vibrant colors of the fresh berries – strawberries, blueberries, raspberries, and blackberries – contrast beautifully with the creamy white cheese and golden-brown crackers, creating a stunning presentation that will impress your guests.
+            <br><br>The base of this delectable treat is a selection of premium crackers, chosen for their perfect crunch and subtle flavor, which complement the richness of the cream cheese. The cream cheese is whipped to perfection, light and airy, with just the right amount of sweetness to enhance the natural flavors of the berries.
+            <br><br>Perfect for afternoon tea, brunch, or a light dessert, our Berry Cream Crackers are versatile and easy to serve. They are a fantastic option for entertaining, as they can be prepared in advance and assembled quickly when needed. Enjoy the refreshing and satisfying taste of our Berry Cream Crackers and make any moment special.
+        </i></p>
+            
+         </div>
+    </div>
+    <hr class="line">
+
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Ingredients</I></h1>
+        <h3>For the Crackers:</h3>
+        <section>
+        <ul>
+            <li>1 cup all-purpose flour</li>
+            <li>½ teaspoon salt</li>
+            <li>1 tablespoon sugar</li>
+            <li>½ teaspoon salt</li>
+            <li>4 tablespoons cold unsalted butter, cubed</li>
+            <li>¼ cup cold water</li>
+        </ul>
+    </section>
+    <h3>For the Berry Cream:</h3>
+        <section>
+        <ul>
+            <li>1 cup heavy cream</li>
+            <li>2 tablespoons powdered sugar</li>
+            <li>1 teaspoon vanilla extract</li>
+            <li>1 cup mixed berries (strawberries, blueberries, raspberries)</li>
+        </ul>
+    </section>
+    <h3>For Garnish:</h3>
+        <section>
+        <ul>
+            <li>Fresh mint leaves</li>
+            <li>Powdered sugar</li>
+            <li>Extra berries</li>
+        </ul>
+    </section>
+</div>
+    </div>
+    <hr class="line">
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Intructions</I></h1>
+        <h3>1. Prepare the Crackers:</h3>
+        <section>
+        <ul>
+            <li>Mix Dry Ingredients: In a medium bowl, whisk together the flour, salt, and sugar.</li>
+            <li>Cut in Butter: Add the cubed butter to the flour mixture. Use a pastry cutter or your fingers to cut the butter into the flour until the mixture resembles coarse crumbs.</li>
+            <li>Add Water: Gradually add the cold water, one tablespoon at a time, mixing until the dough comes together.</li>
+            <li>Roll Out Dough: On a floured surface, roll out the dough to a ⅛-inch thickness. Cut into desired cracker shapes.</li>
+            <li>Bake: Preheat your oven to 375°F (190°C). Place the crackers on a baking sheet lined with parchment paper. Bake for 12-15 minutes, or until golden brown. Let cool completely.</li>
+    <h3>2. Prepare the Berry Cream:</h3>
+        <section>
+        <ul>
+            <li>Whip Cream: In a large bowl, beat the heavy cream with an electric mixer on medium speed until soft peaks form.</li>
+            <li>Add Sugar and Vanilla: Add the powdered sugar and vanilla extract. Continue beating until stiff peaks form.</li>
+            <li>Fold in Berries: Gently fold in the mixed berries.</li>
+          </section>
+
+          <h3>3. Assemble the Berry Cream Crackers:</h3>
+          <section>
+          <ul>
+              <li>Layer Cream on Crackers: Spread a generous dollop of berry cream on each cracker.</li>
+              <li>Garnish: Top with fresh mint leaves and extra berries for garnish.</li>
+      </section>    
+      <h3>4. Serve:</h3>
+      <section>
+      <ul>
+          <li>Presentation: Arrange the berry cream crackers on a serving platter.</li>
+          <li>Enjoy: Serve immediately and enjoy the refreshing combination of creamy berries and crispy crackers.</li>
+  </section>    
+</div>
+</div>
+<hr class="line">
+
+<div class="about-container">
+    <div class="about-card">
+    <h1>Tips</h1>
+    <section>
+    <ul>
+        <li>Make Ahead: Crackers can be baked ahead of time and stored in an airtight container for up to 3 days.</li>
+        <li>Berry Mix: Feel free to use any combination of berries you like or have on hand. </li>
+        <li>Chilled Cream: For best results, chill the bowl and beaters before whipping the cream. </li>
+    </section>   
+</div>
+</div>
+
+<hr class="line">
+<div class="desp">
+    <h1>And your delicious <I>Strawberry Cocoa Cookie</I> is ready!</h1>
+</div>
+<img class="imageee" src="crackers.jpg" alt="Berry Cream Cracker">
+<footer>
+        <p>&copy; 2024 Tokkie Dokie. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        // Close dropdowns if user clicks outside of them
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

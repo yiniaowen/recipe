@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokkie Dokie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1px 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .header-content .logo {
+            text-decoration: none;
+            margin-bottom: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        .header-content .additional-image {
+            text-decoration: none;
+            margin-top: 20px;
+            width: 10%; 
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .search-bar {
+            margin-top: 10px;
+            position: absolute;
+            right: 150px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 13px;
+            margin-left: 5px;
+            background-color: rgb(125, 15, 15);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #222222;
+        }
+
+        .red-line {
+            border: none;
+            border-top: 9px solid rgb(97, 20, 20);
+        }
+
+        .line {
+            border: none;
+            border-top: 1px solid rgb(97, 20, 20);
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: left; 
+            margin-left: 30px;
+        }
+
+        .button-group .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button-group .dropdown button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 25px;
+            background-color: #ffffff;
+            text-decoration: none;
+            color: rgb(97, 20, 20);
+            text-align: center;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .button-group .dropdown button:hover {
+            background-color: rgb(219, 211, 211);
+        }
+
+        .button-group .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(97, 20, 20);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .button-group .dropdown-content a {
+            color: rgb(249, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .button-group .dropdown-content a:hover {
+            background-color: #1d1d1d;
+        }
+
+
+/*for recipe*/
+.container {
+    display: inline-flexbox;
+    align-items: center;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: justify;
+    color: rgb(97, 20, 20);
+}
+
+/*name of recipe*/
+.desp {
+    display: absolute;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    text-align: center;
+    color: rgb(97, 20, 20);
+}
+/*to align image and description of image*/
+.container-card {
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding: 1px;
+    text-align: left; /* Align text to the left */
+    display: inline-flex;
+    align-items: center;
+    margin-right: 90px;
+
+}
+/*for image*/
+.container img {
+    width: 450px;
+    height: 330px;
+    margin-left: 130px; /* Space between image and text */
+    margin-right: 70px;
+}
+
+.about-container {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+
+        }
+        .about-container h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+            color: rgb(97, 20, 20);
+        }
+          /*name of recipe*/
+        .about-container h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: rgb(97, 20, 20);
+        }
+         /*description about the recipe*/
+        .about-container p {
+            line-height: 1.6; 
+            color: rgb(97, 20, 20);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+          }
+
+        li {
+            margin-bottom: 10px;
+          }
+/*for decorating li*/
+          section {
+           color: rgb(97, 20, 20);
+           font-size: 17px;
+}
+
+.imageee {
+    display: block;
+    width: 350px; /* Set the width to a smaller size */
+    height: auto;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+
+}
+       
+        footer {
+            background-color: rgb(97, 20, 20);
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+            position: bottom;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="bunny.jpeg" alt="Another Image" class="additional-image">
+            </a>
+            <a href="index.html">
+                <img src="recipe.webp" alt="Tokkie Dokie" class="logo">
+            </a>
+        </div>
+    </header>
+    <hr class="red-line">
+
+    <div class="button-group">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('home-dropdown')">HOME</button>
+            <div id="home-dropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('sweet-treats-dropdown')">SWEET TREATS</button>
+            <div id="sweet-treats-dropdown" class="dropdown-content">
+                <a href="matcha.html">Matcha Cake</a>
+                <a href="cookie.html">Coco Cookies</a>
+                <a href="crackers.html">Berry Crackers</a>
+                <a href="product.html">Cup-Cake</a>
+                <a href="pie.html">Strawberry Pie</a>
+                <a href="pretzel.html">Pretzel Donut</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dinner-menu-dropdown')">DINNER MENU</button>
+            <div id="dinner-menu-dropdown" class="dropdown-content">
+                <a href="pasta.html">Pasta</a>
+                <a href="steak.html">Steak</a>
+                <a href="omurice.html">Omu-Rice</a>
+                <a href="hamburger.html">Hamburger Steak</a>
+                <a href="ramen.html">Classic Ramen</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('crunchy-bites-dropdown')">CRUNCHY BITES</button>
+            <div id="crunchy-bites-dropdown" class="dropdown-content">
+                <a href="chips.html">Burger</a>
+                <a href="nuggets.html">Nuggets</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="fries.html">Crunchy Fries</a>
+                <a href="chicken.html">Purinkle Chicken</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('all-recipe-dropdown')">ALL RECIPE</button>
+            <div id="all-recipe-dropdown" class="dropdown-content">
+                <a href="breakfast.html">All Recipies</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form action="search_results.html" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr class="red-line">
+    <div class="desp">
+        <h1>SHRIMP ALFREDO PASTA RECIPE</h1>
+</div>
+    <div class="container">
+        <div class="container-card">
+            <img src="seafood pasta.jpeg" alt="Tokkie Dokie">
+            <p><i>Experience a luxurious meal with our Shrimp Alfredo Pasta, where creamy, velvety Alfredo sauce meets succulent, perfectly cooked shrimp. This dish combines the rich, buttery flavors of classic Alfredo sauce with the delicate sweetness of plump shrimp, creating a truly indulgent dining experience.
+            <br><br>The Alfredo sauce is made from scratch with a blend of creamy heavy cream, freshly grated Parmesan cheese, and a hint of garlic, resulting in a smooth and luscious sauce that coats each strand of pasta. The sauce is seasoned to perfection with a touch of black pepper and a hint of nutmeg, adding depth and complexity to every bite.
+            <br><br>Tender shrimp are sautéed to golden perfection, infused with a touch of lemon juice and a sprinkle of fresh herbs, which complement the creamy Alfredo sauce beautifully. The shrimp are cooked just right—juicy and flavorful, adding a satisfying contrast to the rich pasta.
+            <br><br>Served over a bed of al dente fettuccine, this dish is garnished with a sprinkle of fresh parsley and a generous shaving of Parmesan cheese, adding a touch of color and an extra layer of flavor. Each forkful delivers a delightful combination of creamy, savory sauce, perfectly seasoned shrimp, and tender pasta, making it a decadent choice for any special occasion or a comforting weeknight dinner.
+            <br><br>Our Shrimp Alfredo Pasta is not just a meal; it's an experience—one that will leave you craving its rich, comforting flavors long after the last bite.
+        </i></p>
+            
+         </div>
+    </div>
+    <hr class="line">
+
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Ingredients</I></h1>
+        <h3>For the Pasta:</h3>
+        <section>
+        <ul>
+            <li>8 oz fettuccine</li>
+            <li>1 tablespoon olive oil</li>
+            <li>1 pound large shrimp, peeled and deveined</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 cup heavy cream</li>
+            <li>1 cup grated Parmesan cheese</li>
+            <li>1 teaspoon Italian seasoning</li>
+            <li>Salt and pepper to taste</li>
+            <li>Fresh parsley for garnish</li>
+        </ul>
+    </section>
+   <h3>For the Alfredo Sauce:</h3>
+        <section>
+        <ul>
+            <li>2 tablespoons unsalted butter</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 cup heavy cream</li>
+            <li>1 cup grated Parmesan cheese</li>
+            <li>Salt and black pepper to taste</li>
+        </ul>
+    </section>
+</div>
+    </div>
+    <hr class="line">
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Intructions</I></h1>
+        <h3>1. Prepare the Pasta:</h3>
+        <section>
+        <ul>
+            <li>Cook the fettuccine according to the package instructions until al dente. Drain and set aside.</li>
+            <li>In a large skillet, heat olive oil over medium-high heat. Add shrimp and cook until pink and opaque, about 2-3 minutes per side. Remove shrimp from the skillet and set aside.</li>
+            </section>
+    <h3>2. Prepare the Alfredo Sauce:</h3>
+        <section>
+        <ul>
+            <li>In the same skillet, melt butter over medium heat. Add garlic and sauté until fragrant, about 1 minute.</li>
+            <li>Pour in heavy cream and bring to a simmer. Reduce heat and stir in Parmesan cheese until melted and smooth. Season with salt and pepper to taste.</li>
+           </section>
+
+          <h3>3. Combine and Serve:</h3>
+          <section>
+          <ul>
+              <li>Add the cooked fettuccine to the Alfredo sauce and toss to coat.</li>
+              <li>Return the shrimp to the skillet and stir to combine.</li>
+              <li>Garnish with fresh parsley and additional Parmesan cheese if desired. Serve immediately. </li>
+      </section>     
+</div>
+</div>
+<hr class="line">
+
+<div class="about-container">
+    <div class="about-card">
+    <h1>Tips</h1>
+    <section>
+    <ul>
+        <li>For Extra Flavor: Add a pinch of red pepper flakes for a bit of heat.</li>
+        <li>The pasta and sauce can be prepared ahead of time and reheated just before serving.</li>
+        <li>Top with extra Parmesan, a squeeze of lemon juice, or a sprinkle of fresh herbs. </li>
+    </section>   
+</div>
+</div>
+
+<hr class="line">
+<div class="desp">
+    <h1>And your delicious <I>Shrimp Alfredo Pasta</I> is ready!</h1>
+</div>
+<img class="imageee" src="Fettuccine Alfredo With Shrimp Recipe.jpeg" alt="Matcha Cake">
+<footer>
+        <p>&copy; 2024 Tokkie Dokie. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        // Close dropdowns if user clicks outside of them
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

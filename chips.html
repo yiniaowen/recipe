@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokkie Dokie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1px 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .header-content .logo {
+            text-decoration: none;
+            margin-bottom: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        .header-content .additional-image {
+            text-decoration: none;
+            margin-top: 20px;
+            width: 10%; 
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .search-bar {
+            margin-top: 10px;
+            position: absolute;
+            right: 150px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 13px;
+            margin-left: 5px;
+            background-color: rgb(125, 15, 15);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #222222;
+        }
+
+        .red-line {
+            border: none;
+            border-top: 9px solid rgb(97, 20, 20);
+        }
+
+        .line {
+            border: none;
+            border-top: 1px solid rgb(97, 20, 20);
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: left; 
+            margin-left: 30px;
+        }
+
+        .button-group .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button-group .dropdown button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 25px;
+            background-color: #ffffff;
+            text-decoration: none;
+            color: rgb(97, 20, 20);
+            text-align: center;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .button-group .dropdown button:hover {
+            background-color: rgb(219, 211, 211);
+        }
+
+        .button-group .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(97, 20, 20);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .button-group .dropdown-content a {
+            color: rgb(249, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .button-group .dropdown-content a:hover {
+            background-color: #1d1d1d;
+        }
+
+
+/*for recipe*/
+.container {
+    display: inline-flexbox;
+    align-items: center;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: justify;
+    color: rgb(97, 20, 20);
+}
+
+/*name of recipe*/
+.desp {
+    display: absolute;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    text-align: center;
+    color: rgb(97, 20, 20);
+}
+/*to align image and description of image*/
+.container-card {
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding: 1px;
+    text-align: left; /* Align text to the left */
+    display: inline-flex;
+    align-items: center;
+    margin-right: 90px;
+
+}
+/*for image*/
+.container img {
+    width: 450px;
+    height: 330px;
+    margin-left: 130px; /* Space between image and text */
+    margin-right: 70px;
+}
+
+.about-container {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+
+        }
+        .about-container h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+            color: rgb(97, 20, 20);
+        }
+          /*name of recipe*/
+        .about-container h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: rgb(97, 20, 20);
+        }
+         /*description about the recipe*/
+        .about-container p {
+            line-height: 1.6; 
+            color: rgb(97, 20, 20);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+          }
+
+        li {
+            margin-bottom: 10px;
+          }
+/*for decorating li*/
+          section {
+           color: rgb(97, 20, 20);
+           font-size: 17px;
+}
+
+.imageee {
+    display: block;
+    width: 350px; /* Set the width to a smaller size */
+    height: auto;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+
+}
+       
+        footer {
+            background-color: rgb(97, 20, 20);
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+            position: bottom;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="bunny.jpeg" alt="Another Image" class="additional-image">
+            </a>
+            <a href="index.html">
+                <img src="recipe.webp" alt="Tokkie Dokie" class="logo">
+            </a>
+        </div>
+    </header>
+    <hr class="red-line">
+
+    <div class="button-group">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('home-dropdown')">HOME</button>
+            <div id="home-dropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('sweet-treats-dropdown')">SWEET TREATS</button>
+            <div id="sweet-treats-dropdown" class="dropdown-content">
+                <a href="matcha.html">Matcha Cake</a>
+                <a href="cookie.html">Coco Cookies</a>
+                <a href="crackers.html">Berry Crackers</a>
+                <a href="product.html">Cup-Cake</a>
+                <a href="pie.html">Strawberry Pie</a>
+                <a href="pretzel.html">Pretzel Donut</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dinner-menu-dropdown')">DINNER MENU</button>
+            <div id="dinner-menu-dropdown" class="dropdown-content">
+                <a href="pasta.html">Pasta</a>
+                <a href="steak.html">Steak</a>
+                <a href="omurice.html">Omu-Rice</a>
+                <a href="hamburger.html">Hamburger Steak</a>
+                <a href="ramen.html">Classic Ramen</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('crunchy-bites-dropdown')">CRUNCHY BITES</button>
+            <div id="crunchy-bites-dropdown" class="dropdown-content">
+                <a href="chips.html">Burger</a>
+                <a href="nuggets.html">Nuggets</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="fries.html">Crunchy Fries</a>
+                <a href="chicken.html">Purinkle Chicken</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('all-recipe-dropdown')">ALL RECIPE</button>
+            <div id="all-recipe-dropdown" class="dropdown-content">
+                <a href="breakfast.html">All Recipies</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <form action="search_results.html" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr class="red-line">
+    <div class="desp">
+        <h1>JUICY CHICKEN BURGER RECIPE</h1>
+</div>
+    <div class="container">
+        <div class="container-card">
+            <img src="download (1).jpeg" alt="Tokkie Dokie">
+            <p><i>Savor the succulent goodness of our Chicken Burger, a mouthwatering delight that combines a perfectly seasoned, juicy chicken patty with a medley of fresh, flavorful toppings. Each bite starts with a tender, grilled chicken breast, marinated in a blend of aromatic spices and herbs that create a savory, irresistible flavor. The patty is grilled to perfection, ensuring a crispy, golden exterior while maintaining a moist and flavorful interior.
+            <br><br>Nestled in a soft, toasted brioche bun, the chicken patty is accompanied by crisp lettuce, ripe tomato slices, and a layer of tangy pickles that add a refreshing crunch. The burger is generously topped with a creamy, homemade mayo or a zesty barbecue sauce, which enhances the flavors and adds a smooth, satisfying finish.
+            <br><br>For an extra touch of indulgence, add a slice of melted cheddar cheese or a savory bacon strip, which melts into the patty, creating a rich, savory experience. The combination of textures and flavors—from the tender chicken and fresh veggies to the soft bun and creamy sauce—creates a harmonious and delightful taste sensation.
+            <br><br>Perfect for a quick lunch or a casual dinner, our Chicken Burger is a gourmet treat that promises to satisfy your cravings and leave you coming back for more. Enjoy this classic favorite with a side of crispy fries or a refreshing salad for a meal that’s both satisfying and delicious.
+        </i></p>
+            
+         </div>
+    </div>
+    <hr class="line">
+
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Ingredients</I></h1>
+        <h3>For the Chicken Patties:</h3>
+        <section>
+        <ul>
+            <li>1 pound ground chicken</li>
+            <li>½ cup breadcrumbs</li>
+            <li>¼ cup grated Parmesan cheese</li>
+            <li>1 egg</li>
+            <li>2 cloves garlic, minced </li>
+            <li>1 tablespoon chopped fresh parsley</li>
+            <li>Salt and pepper to taste</li>
+            </ul>
+    </section>
+   <h3>For the Burger Assembly:</h3>
+        <section>
+        <ul>
+            <li>4 hamburger buns</li>
+            <li>Lettuce leaves</li>
+            <li>Tomato slices</li>
+            <li>Red onion slices</li>
+            <li>Pickles</li>
+            <li>Mayonnaise</li>
+            <li>Ketchup</li>
+            <li>Mustard</li>
+        </ul>
+    </section>
+</div>
+    </div>
+    <hr class="line">
+    <div class="about-container">
+        <div class="about-card">
+        <h1><I>Intructions</I></h1>
+        <h3>1. Prepare the Chicken Patties:</h3>
+        <section>
+        <ul>
+            <li>In a large bowl, combine ground chicken, breadcrumbs, Parmesan cheese, egg, garlic, parsley, salt, and pepper. Mix until well combined.</li>
+            <li>Shape the mixture into 4 patties, ensuring they are even in thickness for consistent cooking. </li>
+            <li>Heat a grill or skillet over medium-high heat and cook the patties for 5-6 minutes per side, or until the internal temperature reaches 165°F (74°C).</li>
+             </section>
+    <h3>2. Prepare the Frosting:</h3>
+        <section>
+        <ul>
+            <li>In a large bowl, beat the butter until creamy using an electric mixer on medium speed.</li>
+            <li>Gradually add the powdered sugar, beating well after each addition. Add the matcha powder and beat until combined.</li>
+            <li>Add 2 tablespoons of heavy cream (or milk) and vanilla extract. Beat until smooth and spreadable. If the frosting is too thick, add more cream a tablespoon at a time until the desired consistency is reached.</li>
+          </section>
+
+          <h3>3. Assemble the Burgers:</h3>
+          <section>
+          <ul>
+              <li>Toast the hamburger buns lightly on the grill or in a toaster.</li>
+              <li>Spread mayonnaise on the bottom half of each bun.</li>
+              <li>Place a chicken patty on each bun, then layer with lettuce, tomato slices, red onion slices, and pickles.</li>
+              <li>Spread ketchup and mustard on the top half of the buns and place them on top of the assembled ingredients.</li>
+      </section>    
+      <h3>4. Serve and Enjoy:
+
+      </h3>
+      <section>
+        <ul>
+            <li>Serve the chicken burgers immediately with your favorite side dishes, such as fries or a salad.</li>
+            <li>Enjoy your homemade, juicy chicken burger!</li>
+    </section>   
+</div>
+</div>
+<hr class="line">
+
+<div class="about-container">
+    <div class="about-card">
+    <h1>Tips</h1>
+    <section>
+    <ul>
+        <li>For added flavor, try mixing in your favorite herbs and spices into the chicken patty mixture.</li>
+        <li>If you prefer a spicier burger, add some chili flakes or hot sauce to the patties.</li>
+        <li>Use a meat thermometer to ensure your patties are cooked to a safe temperature. </li>
+    </section>   
+</div>
+</div>
+
+<hr class="line">
+<div class="desp">
+    <h1>And your delicious <I>Juicy Chicken Burger</I> is ready!</h1>
+</div>
+<img class="imageee" src="bdownload.jpeg" alt="Matcha Cake">
+<footer>
+        <p>&copy; 2024 Tokkie Dokie. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        // Close dropdowns if user clicks outside of them
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

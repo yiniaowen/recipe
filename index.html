@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<head>
+    <title>Tokkie Dokie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            padding: 1px 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-content {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .header-content .logo {
+            text-decoration: none;
+            margin-bottom: 30px;
+            width: 40%;
+            height: auto;
+        }
+
+        .header-content .additional-image {
+            text-decoration: none;
+            margin-top: 20px;
+            width: 10%; 
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .search-bar {
+            margin-top: 10px;
+            position: absolute;
+            right: 150px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 13px;
+            margin-left: 5px;
+            background-color: rgb(125, 15, 15);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #222222;
+        }
+
+        .red-line {
+            border: none;
+            border-top: 9px solid rgb(97, 20, 20);
+        }
+
+        .line {
+            border: none;
+            border-top: 1px solid rgb(97, 20, 20);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: left; 
+            margin-left: 30px;
+        }
+
+        .button-group .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button-group .dropdown button {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 25px;
+            background-color: #ffffff;
+            text-decoration: none;
+            color: rgb(97, 20, 20);
+            text-align: center;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .button-group .dropdown button:hover {
+            background-color: rgb(219, 211, 211);
+        }
+
+        .button-group .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(97, 20, 20);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .button-group .dropdown-content a {
+            color: rgb(249, 243, 243);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .button-group .dropdown-content a:hover {
+            background-color: #1d1d1d;
+        }
+
+        /*for the 3 images*/
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 19px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 180%;
+            max-width: 200px;
+            height: 160%;
+            max-height: 200px;
+            margin-bottom: 10px;
+            border-radius: 9px;
+            
+        }
+
+        .product-card h3 {
+            color: rgb(251, 250, 250);
+            padding: 10px;
+            background-color: rgb(223, 175, 175);
+            font-family: 'Times New Roman', Times, serif;
+        
+        }
+
+        .product-card p {
+            font-family: 'Times New Roman', Times, serif;
+            color: #302a2a;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+/*for recipe of the week heading*/
+        .description {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(97, 20, 20);
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+/*for recipe of the week below line*/
+.about {
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(97, 20, 20);
+    margin-left: 30px;
+    padding-top: 0;
+    margin-top: 0; 
+}
+
+
+/*for welcome tokkie dokie portion*/
+    .container {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: left;
+    color: rgb(97, 20, 20);
+}
+
+/*tokkie dokkie welcome heading*/
+.desp {
+    display: absolute;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: center;
+    color: rgb(97, 20, 20);
+}
+/*to align image and description of image*/
+.container-card {
+    background-color: rgb(255, 255, 255);
+    font-size: 27px;
+    padding: 1px;
+    text-align: center; /* Align text to the left */
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+/*for image*/
+.container img {
+    width: 350px;
+    height: 250px;
+    margin-left: 50px; /* Space between image and text */
+}
+
+/*for recipe ingredients*/
+.about-container {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+
+        }
+          /*name of recipe*/
+        .about-container h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: rgb(97, 20, 20);
+        }
+         /*description about the recipe*/
+        .about-container p {
+            line-height: 1.6; 
+            color: rgb(97, 20, 20);
+        }
+       
+/*for adding footer*/
+        footer {
+            background-color: rgb(97, 20, 20);
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+            width: 100%;
+            position: bottom;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            max-height: 80%;
+            margin: none;
+            
+        }
+
+        .carousel-images {
+            margin-left: 20px;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images a {
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-images img {
+            align-items: center;
+            width: 95%;
+            height: 80%;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background-color: rgba(101, 10, 10, 0.5);
+            border: none;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /*for media query*/
+        @media only screen and (max-width: 428px) {
+        .header-content .additional-image {
+        width: 50%;
+    }
+
+    .search-bar {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .product-card img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .button-group .dropdown button {
+        margin: 5px 0;
+        padding: 10px 15px;
+    }
+
+    .carousel-images img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .container img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .container-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description, .about, .desp, .container-card p {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="bunny.jpeg" alt="Another Image" class="additional-image">
+            </a>
+            <a href="index.html">
+                <img src="recipe.webp" alt="Tokkie Dokie" class="logo">
+            </a>
+        </div>
+    </header>
+    <hr class="red-line">
+
+    <div class="button-group">
+        <div class="dropdown">
+            <button onclick="toggleDropdown('home-dropdown')">HOME</button>
+            <div id="home-dropdown" class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('sweet-treats-dropdown')">SWEET TREATS</button>
+            <div id="sweet-treats-dropdown" class="dropdown-content">
+                <a href="matcha.html">Matcha Cake</a>
+                <a href="cookie.html">Coco Cookies</a>
+                <a href="crackers.html">Berry Crackers</a>
+                <a href="product.html">Cup-Cake</a>
+                <a href="pie.html">Strawberry Pie</a>
+                <a href="pretzel.html">Pretzel Donut</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('dinner-menu-dropdown')">DINNER MENU</button>
+            <div id="dinner-menu-dropdown" class="dropdown-content">
+                <a href="pasta.html">Pasta</a>
+                <a href="steak.html">Steak</a>
+                <a href="omurice.html">Omu-Rice</a>
+                <a href="hamburger.html">Hamburger Steak</a>
+                <a href="ramen.html">Classic Ramen</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('crunchy-bites-dropdown')">CRUNCHY BITES</button>
+            <div id="crunchy-bites-dropdown" class="dropdown-content">
+                <a href="chips.html">Burger</a>
+                <a href="nuggets.html">Nuggets</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="fries.html">Crunchy Fries</a>
+                <a href="chicken.html">Purinkle Chicken</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleDropdown('all-recipe-dropdown')">ALL RECIPE</button>
+            <div id="all-recipe-dropdown" class="dropdown-content">
+                <a href="breakfast.html">All Recipies</a>
+            </div>
+        </div>
+        <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for a recipe...">
+                <button onclick="performSearch()">Search</button>
+            </div>
+            </div>
+            
+    <hr class="red-line">
+    <br>
+    <br>
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <a href="pizza.html">
+                <img src="spizza.jpg" alt="Slide 1">
+            </a>
+            <a href="chicken.html">
+                <img src="schicken.jpg" alt="Slide 2">
+            </a>
+            <a href="recipe3.html">
+                <img src="scake.jpg" alt="Slide 3">
+            </a>
+            <a href="salad.html">
+                <img src="ssalad.jpg" alt="Slide 4">
+            </a>
+            <a href="ramen.html">
+                <img src="sramennn.jpg" alt="Slide 5">
+            </a>
+        </div>
+        <div class="carousel-controls">
+            <button onclick="prevSlide()">&#10094; Back</button>
+            <button onclick="nextSlide()">Next &#10095;</button>
+        </div>
+    </div>
+    <hr class="line">
+    <div class="description">
+            <h1>Recipe of the week!</h1>
+    </div>
+    <div class="about">
+        <h2>Dive into a culinary adventure with our handpicked favorite, bursting with flavors and perfect for your next meal!</h2>
+    </div>
+
+    <div class="product-container">
+        <div class="product-card"><a href="chicken.html">
+            <img src="Korean fried chicken.jpeg" alt="DISH 1">
+            <p> "Crispy perfection with a sweet, savory twist that's as comforting as a warm hug!"</p>
+            <h3>Purinkle Fried Chicken</h3></a>
+        </div>
+        
+        <div class="product-card"><a href="product">
+            <img src="_3.jpeg" alt="DISH 2">
+            <p> "A rich and moist chocolate delight topped with a creamy cocoa frosting that melts in your mouth!"</p>
+            <h3>Coco Cup-Cake</h3></a>
+        </div>
+
+        <div class="product-card"><a href="pasta.html">
+            <img src="seafood pasta.jpeg" alt="Dish 3">
+            <p>"Savor the creamy, garlicky delight of Shrimp Alfredo Pasta with tender shrimp in every bite!"</p>
+            <h3>Shrimp Alfredo Pasta</h3></a>
+        </div>
+    </div>
+    <hr class="red-line">
+
+    <div class="desp">
+        <h1>Welcome to Tokkie Dokie!</h1>
+</div>
+    <div class="container">
+        <div class="container-card">
+            <p><i>Welcome to Tokkie Dokie! We're delighted to have you in our cozy corner of the internet, where deliciousness meets heartwarming memories. Here at Tokkie Dokie, every recipe is a cherished story, crafted with love and a dash of magic. Whether you're a seasoned chef or a kitchen newbie, our recipes are designed to bring joy and comfort to your table. So, grab your apron, gather your loved ones, and let’s create mouthwatering meals and unforgettable moments together!</i></p>
+            <img src="dokie.jpg" alt="Tokkie Dokie">
+         </div>
+    </div>
+
+    <footer>
+        
+        <p>&copy; 2024 Tokkie Dokie. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+
+        // Close dropdowns if user clicks outside of them
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-images a').length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Initialize the carousel
+        showSlide(currentSlide);
+
+        function performSearch() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+        if (searchInput === 'fried chicken') {
+            window.location.href = 'chicken.html';
+        } else if (searchInput === 'burger') {
+            window.location.href = 'chips.html';
+        } else if (searchInput === 'cookies') {
+            window.location.href = 'cookie.html';
+        } else if (searchInput === ' crackers') {
+            window.location.href = 'crackers.html';
+        } else if (searchInput === 'fries') {
+            window.location.href = 'fries.html';
+        } else if (searchInput === 'hamburger') {
+            window.location.href = 'hamburger.html';
+        } else if (searchInput === 'matcha cake') {
+            window.location.href = 'matcha.html';
+        } else if (searchInput === 'nuggets') {
+            window.location.href = 'nuggets.html';
+        } else if (searchInput === 'omurice') {
+            window.location.href = 'omurice.html';
+        } else if (searchInput === 'pasta') {
+            window.location.href = 'pasta.html';
+        } else if (searchInput === 'strawberry pie') {
+            window.location.href = 'pie.html';
+        } else if (searchInput === 'pizza') {
+            window.location.href = 'pizza.html';
+        } else if (searchInput === 'donut') {
+            window.location.href = 'pretzel.html';
+        } else if (searchInput === 'cup cake') {
+            window.location.href = 'product.html';
+        } else if (searchInput === 'classic chicken ramen') {
+            window.location.href = 'ramen.html';
+        } else if (searchInput === 'chocolate mousse cake') {
+            window.location.href = 'recipe3.html';
+        } else if (searchInput === 'ceaser salad') {
+            window.location.href = 'salad.html';
+        } else if (searchInput === 'chicken katsu') {
+            window.location.href = 'steak.html';
+        } else {
+            alert('Recipe not found!');
+        }
+    }
+    </script>
+</body>
+</html>
+
