@@ -317,88 +317,91 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
-        /* Media query for iPhone 12 (390px width) */
-@media (max-width: 390px) {
-    header {
-        padding: 10px 0;
-    }
-
-    .header-content .logo {
-        width: 80%;
-        margin-bottom: 15px;
-    }
-
+@media (max-width: 400px) {
+    /* Adjust header content */
+    .header-content .logo, 
     .header-content .additional-image {
-        width: 20%;
-        margin-top: 10px;
+        width: 80%; /* Adjust the width for smaller screens */
+        margin: 10px auto; /* Center align images */
     }
 
+    /* Adjust search bar */
+    .search-bar {
+        right: 10px; /* Adjust position for smaller screens */
+        margin-top: 5px; /* Adjust margin for better spacing */
+    }
+
+    /* Adjust dropdown buttons */
     .button-group {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 70%;
-    }
-
-    .button-group .dropdown {
-        margin-bottom: 10px;
-        width: 100%;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
     }
 
     .button-group .dropdown button {
-        width: 100%;
+        margin: 5px 0; /* Reduce margin for smaller screens */
+        padding: 15px 20px; /* Adjust padding for better fit */
+        width: 90%; /* Full width buttons */
     }
 
-    .search-bar {
-        width: 30%;
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 10px;
-    }
-
-    .search-bar input[type="text"] {
-        width: 70%;
-        margin-bottom: 0;
-    }
-
-    .search-bar button {
-        padding: 10px;
-        margin-left: 5px;
-    }
-
-    .carousel-images img {
-        width: 100%;
-        height: auto;
-    }
-
+    /* Adjust product cards */
     .product-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 20px 10px;
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
     .product-card img {
-        width: 100%;
-        height: auto;
-        max-width: none;
-        max-height: none;
+        width: 100%; /* Adjust image width for better fit */
+        height: auto; /* Maintain aspect ratio */
     }
 
-    .about-container {
-        width: 90%;
-        margin: 10px auto;
-        padding: 15px;
+    .product-card p, 
+    .product-card h3 {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    /* Adjust carousel controls */
+    .carousel-controls button {
+        padding: 10px; /* Reduce padding for smaller screens */
+        font-size: 18px; /* Adjust font size */
+    }
+
+    /* Adjust welcome section */
+    .desp {
+        font-size: 24px; /* Adjust font size */
+        padding: 5px; /* Adjust padding for better fit */
     }
 
     .container-card {
-        flex-direction: column;
-        margin-left: 0;
-        padding: 10px;
+        flex-direction: column; /* Stack image and text vertically */
+        margin-left: 0; /* Remove margin for better fit */
+        text-align: center; /* Center align text */
     }
 
     .container img {
-        width: 90%;
-        height: auto;
-        margin: 10px 0;
+        width: 100%; /* Adjust image width for better fit */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Add margin for better spacing */
+    }
+
+    /* Adjust about container */
+    .about-container {
+        width: 95%; /* Adjust width for smaller screens */
+        margin: 10px auto; /* Center align container */
+        padding: 10px; /* Adjust padding for better fit */
+    }
+
+    .about-container h3 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .about-container p {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    /* Adjust footer */
+    footer {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size */
     }
 }
 
