@@ -23,14 +23,14 @@
             display: inline-block;
             align-items: center;
         }
-
+        
         .header-content .logo {
             text-decoration: none;
             margin-bottom: 30px;
             width: 40%;
             height: auto;
         }
-
+        /*bunny image*/
         .header-content .additional-image {
             text-decoration: none;
             margin-top: 20px;
@@ -221,6 +221,7 @@
     display: flex;
     align-items: center;
     margin-left: 30px;
+    margin-bottom: 30px;
 }
 /*for image*/
 .container img {
@@ -271,16 +272,15 @@
         /* Carousel Styles */
         .carousel {
             position: relative;
-            max-width: 100%;
-            max-height: 80%;
-            margin: none;
-            
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
         }
 
         .carousel-images {
-            margin-left: 20px;
             display: flex;
             transition: transform 0.5s ease-in-out;
+            
         }
 
         .carousel-images a {
@@ -290,9 +290,8 @@
         }
 
         .carousel-images img {
-            align-items: center;
-            width: 95%;
-            height: 80%;
+            width: 100%;
+            height: auto;
         }
 
         .carousel-controls {
@@ -317,7 +316,7 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
-@media (max-width: 400px) {
+        @media (max-width: 400px) {
     /* Adjust header content */
     .header-content .logo, 
     .header-content .additional-image {
@@ -404,7 +403,6 @@
         font-size: 14px; /* Adjust font size */
     }
 }
-
 
     </style>
 </head>
