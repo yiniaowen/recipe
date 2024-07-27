@@ -6,9 +6,13 @@
     <title>Tokkie Dokie</title>
     <style>
         body {
+            overflow-x: hidden;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+        html{
+            overflow-x: hidden;
         }
         
         header {
@@ -237,6 +241,148 @@
         footer p {
             margin: 0;
         }
+
+        @media (max-width: 428px) {
+            .header-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 0.2rem;
+                padding-block: .5rem;
+            }
+
+            /* Adjust header content */
+            .header-content a {
+                text-decoration: none;
+            }
+
+            .header-content a .logo {
+                margin-bottom: 0px;
+                width: 8.5rem;
+                height: 3rem;
+            }
+
+            /*bunny image*/
+            .header-content a .additional-image {
+                text-decoration: none;
+                margin-top: 0px;
+                width: 3rem;
+                height: auto;
+                margin-left: 0px;
+            }
+
+
+            /* Adjust search bar */
+            .search-bar {
+                right: 30px;
+                /* Adjust position for smaller screens */
+                margin-top: 5px;
+                /* Adjust margin for better spacing */
+            }
+
+            /* Adjust dropdown buttons */
+            .button-group {
+                flex-direction: column-reverse;
+
+            }
+
+            .button-group .dropdown button {
+                margin: 5px 0;
+                /* Reduce margin for smaller screens */
+                padding: 15px 20px;
+                /* Adjust padding for better fit */
+                width: 90%;
+                /* Full width buttons */
+            }
+
+            footer {
+                padding: 8px 0;
+                /* Adjust padding for smaller screens */
+                font-size: 7px;
+                /* Adjust font size */
+            }
+
+
+            /*to align image and description of image*/
+            .container-card {
+                background-color: rgb(255, 255, 255);
+                font-size: 10px;
+                padding-inline: 1.5rem;
+                /* Align text to the left */
+                display: flexbox;
+                flex-direction: column;
+                justify-items: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 0px;
+                row-gap: 1rem;
+            }
+
+            /*for image*/
+            .container img {
+                width: 150px;
+                height: auto;
+            }
+
+            .about-container {
+                font-family: 'Times New Roman', Times, serif;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                width: 80%;
+                max-width: 800px;
+                margin: 20px auto;
+                text-align: justify;
+
+            }
+
+            .about-container h1 {
+                margin-bottom: 10px;
+                font-size: 15px;
+                color: rgb(97, 20, 20);
+            }
+
+            /*name of recipe*/
+            .about-container h3 {
+                margin-bottom: 10px;
+                font-size: 13px;
+                color: rgb(97, 20, 20);
+            }
+
+            /*description about the recipe*/
+            .about-container p {
+                line-height: 1.6;
+                color: rgb(97, 20, 20);
+            }
+
+            section {
+                color: rgb(97, 20, 20);
+                font-size: 10px;
+            }
+
+            .imageee {
+                display: block;
+                width: 150px;
+                /* Set the width to a smaller size */
+                height: auto;
+                margin: 10px auto 0;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+            }
+
+            /*name of recipe*/
+            .desp {
+                display: absolute;
+                align-items: center;
+                font-size: 10px;
+                font-family: 'Times New Roman', Times, serif;
+                padding: 20px;
+                text-align: center;
+                color: rgb(97, 20, 20);
+            }
+        }
+
     </style>
 </head>
 <body>
